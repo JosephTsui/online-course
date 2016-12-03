@@ -1,0 +1,9 @@
+{
+  "name": "online-course",
+  "private": true,
+  "version": "1.0.0",
+  "description": "An online course web service as a demo project",
+  "author": "Tai-Lun Tseng <teaualune@gmail.com>",
+  "license": "MIT"
+}
+
