@@ -1,0 +1,31 @@
+{
+    "parser"  : "babel-eslint",
+    "env": {
+        "browser": true
+    },
+    "extends" : [
+        "airbnb"
+    ],
+    "rules": {
+
+        // see rule meanings in http://eslint.org/docs/rules/${rule_name}
+        "arrow-parens": 0,
+        "comma-dangle": 0,
+        "import/imports-first": 0,
+        "indent": [1, 4],
+        "new-cap": [2, {"capIsNew": false, "newIsCap": true}],
+        "no-class-assign": 0,
+        "no-confusing-arrow": 0,
+        "no-nested-ternary": 0,
+        "no-param-reassign": 0,
+        "no-shadow": 0,
+        "no-unused-vars": 1,
+
+        // react rules: https://github.com/yannickcr/eslint-plugin-react
+        "react/jsx-filename-extension": 0,
+        "react/jsx-indent": [1, 4],
+        "react/jsx-indent-props": [1, 4],
+        "react/no-unused-prop-types": 1,
+        "react/require-extension": "off"
+    }
+}
