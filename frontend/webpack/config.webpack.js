@@ -51,7 +51,7 @@ export default function makeWebpackConfig(config) {
         cache: !isProduction,
         debug: !isProduction,
         resolve: {
-            projectRoot,
+            root: projectRoot,
             extensions: [
                 '',
                 '.js',
