@@ -7,6 +7,8 @@ html(lang="zh-TW")
             link(rel="stylesheet", href=src.style)
         base(href="/")
     body
-        #app
+        #app!= content
+        script(type="text/javascript").
+            window.__INITIAL_STATE__='!{initialState}';
         script(type="text/javascript", src=src.script)
         // version: #{version}

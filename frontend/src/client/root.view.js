@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-export default function Root() {
-    return (<h1>Online Course</h1>);
+export default function Root(props) {
+    return (<h1>{props.title}</h1>);
 }
+
+Root.propTypes = {
+    title: PropTypes.string.isRequired
+};

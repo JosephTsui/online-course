@@ -5,7 +5,7 @@ import cookieParser from 'cookie-parser';
 import helmet from 'helmet';
 import methodOverride from 'method-override';
 import ip from 'ip';
-import * as auth from './auth';
+import * as render from './render';
 
 require('dotenv').config({ slient: true });
 
@@ -38,13 +38,19 @@ app.get('/status', (req, res) => {
 });
 
 app.get('*', (req, res) => {
-    res.render('index.server.pug', {
-        version,
-        src: {
-            script: scriptSrc,
-            style: styleSrc
-        },
-        title: 'Online Course'
+    render.render().then(html => {
+        res.render('index.server.pug', {
+            version,
+            content: html,
+            initialState: render.initialState,
+            src: {
+                script: scriptSrc,
+                style: styleSrc
+            },
+            title: 'Online Course'
+        });
+    }, () => {
+        res.status(500).send();
     });
 });
 

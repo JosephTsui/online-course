@@ -1,0 +1,50 @@
+{
+  "name": "online-course-api",
+  "private": true,
+  "version": "1.0.0",
+  "description": "An online course web service as a demo project",
+  "author": "Tai-Lun Tseng <teaualune@gmail.com>",
+  "license": "MIT",
+  "main": "server.js",
+  "engines": {
+    "node": ">= 6"
+  },
+  "dependencies": {
+    "async": "^2.0.1",
+    "babel-core": "^6.9.0",
+    "babel-plugin-transform-es2015-spread": "^6.8.0",
+    "babel-preset-es2015-node5": "^1.2.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "bluebird": "^3.4.0",
+    "body-parser": "^1.14.2",
+    "bunyan": "^1.8.1",
+    "bunyan-format": "^0.2.1",
+    "compression": "^1.0.3",
+    "cors": "^2.8.1",
+    "lodash": "^3.10.1",
+    "loopback": "3.0.0",
+    "loopback-boot": "^2.23.0",
+    "loopback-component-explorer": "git+https://github.com/strongloop/loopback-component-explorer.git#7f6c09d503adc7bbb2d1c7c04cc8606ff245d52a",
+    "loopback-component-passport": "^2.3.0",
+    "loopback-component-storage": "^1.10.0",
+    "loopback-connector-mysql": "^2.4.0",
+    "loopback-ds-timestamp-mixin": "^3.2.2",
+    "mysql": "^2.10.2",
+    "uuid": "^3.0.0",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "passport-facebook-token": "^3.3.0",
+    "passport-local": "^1.0.0",
+    "passport-twitter": "^1.0.4",
+    "passport-twitter-token": "^1.1.1",
+    "require-dir": "^0.3.0",
+    "strong-error-handler": "^1.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "development": "DEBUG=loopback:security:* AUTO_UPDATE_SCHEMAS=true NODE_ENV=development node-dev server",
+    "staging": "AUTO_UPDATE_SCHEMAS=true NODE_ENV=staging node server",
+    "production": "AUTO_UPDATE_SCHEMAS=true NODE_ENV=production node server"
+  }
+}
+
