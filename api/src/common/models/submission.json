@@ -1,0 +1,68 @@
+{
+    "name": "Submission",
+    "http": {
+        "path": "submission"
+    },
+    "base": "PersistedModel",
+    "idInjection": true,
+    "options": {
+        "validateUpsert": false
+    },
+    "mixins": {
+        "TimeStamp": true
+    },
+    "properties": {
+        "content": {
+            "type": "String",
+            "required": true
+        }
+    },
+    "validations": [],
+    "relations": {
+        "student": {
+            "type": "belongsTo",
+            "model": "user",
+            "foreignKey": "authorId"
+        },
+        "assignment": {
+            "type": "belongsTo",
+            "model": "Assignment",
+            "foreignKey": "assignmentId"
+        },
+        "grade": {
+            "type": "hasOne",
+            "model": "Grade",
+            "foreignKey": "submissionId"
+        }
+    },
+    "acls": [{
+        "accessType": "*",
+        "principalType": "ROLE",
+        "principalId": "$everyone",
+        "permission": "DENY"
+    }, {
+        "accessType": "READ",
+        "principalType": "ROLE",
+        "principalId": "$authenticated",
+        "permission": "ALLOW",
+        "property": "listClubs"
+    }, {
+        "accessType": "READ",
+        "principalType": "ROLE",
+        "principalId": "$authenticated",
+        "permission": "ALLOW",
+        "property": "fetchClubInfo"
+    }, {
+        "accessType": "*",
+        "principalType": "ROLE",
+        "principalId": "admin",
+        "permission": "ALLOW"
+    }, {
+        "accessType": "READ",
+        "principalType": "ROLE",
+        "principalId": "clubOwner",
+        "permission": "ALLOW",
+        "property": "findById"
+    }],
+    "methods": {}
+}

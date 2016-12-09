@@ -1,0 +1,56 @@
+{
+    "name": "Grade",
+    "http": {
+        "path": "grade"
+    },
+    "base": "PersistedModel",
+    "idInjection": true,
+    "options": {
+        "validateUpsert": false
+    },
+    "mixins": {
+        "TimeStamp": true
+    },
+    "properties": {
+        "score": {
+            "type": "Number",
+            "required": true
+        },
+        "comment": {
+            "type": "String"
+        }
+    },
+    "validations": [],
+    "relations": {
+    },
+    "acls": [{
+        "accessType": "*",
+        "principalType": "ROLE",
+        "principalId": "$everyone",
+        "permission": "DENY"
+    }, {
+        "accessType": "READ",
+        "principalType": "ROLE",
+        "principalId": "$authenticated",
+        "permission": "ALLOW",
+        "property": "listClubs"
+    }, {
+        "accessType": "READ",
+        "principalType": "ROLE",
+        "principalId": "$authenticated",
+        "permission": "ALLOW",
+        "property": "fetchClubInfo"
+    }, {
+        "accessType": "*",
+        "principalType": "ROLE",
+        "principalId": "admin",
+        "permission": "ALLOW"
+    }, {
+        "accessType": "READ",
+        "principalType": "ROLE",
+        "principalId": "clubOwner",
+        "permission": "ALLOW",
+        "property": "findById"
+    }],
+    "methods": {}
+}

@@ -38,5 +38,17 @@
     "userIdentity": {
         "dataSource": "db",
         "public": false
+    },
+    "Assignment": {
+        "dataSource": "db",
+        "public": true
+    },
+    "Grade": {
+        "dataSource": "db",
+        "public": true
+    },
+    "Submission": {
+        "dataSource": "db",
+        "public": true
     }
 }

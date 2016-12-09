@@ -5,10 +5,11 @@ const USER_QUERY = {
     email: 'teaualune@gmail.com'
 };
 
-const USER_DATA = Object.assign({
+const USER_DATA = {
+    ...USER_QUERY,
     username: 'teaualune',
     password: 'teaualune'
-}, USER_QUERY);
+};
 
 const ROLE_DATA = {
     name: 'admin'
@@ -42,4 +43,4 @@ module.exports = app => {
     }).catch(err => {
         console.error(err);
     });
-}
+};

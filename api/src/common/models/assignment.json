@@ -1,0 +1,59 @@
+{
+    "name": "Assignment",
+    "http": {
+        "path": "assignment"
+    },
+    "base": "PersistedModel",
+    "idInjection": true,
+    "options": {
+        "validateUpsert": false
+    },
+    "mixins": {
+        "TimeStamp": true
+    },
+    "properties": {
+        "name": {
+            "type": "String",
+            "required": true,
+            "description": "Assignment name"
+        },
+        "content": {
+            "type": "String",
+            "required": true,
+            "description": "assignment content"
+        }
+    },
+    "validations": [],
+    "relations": {
+    },
+    "acls": [{
+        "accessType": "*",
+        "principalType": "ROLE",
+        "principalId": "$everyone",
+        "permission": "DENY"
+    }, {
+        "accessType": "READ",
+        "principalType": "ROLE",
+        "principalId": "$authenticated",
+        "permission": "ALLOW",
+        "property": "listClubs"
+    }, {
+        "accessType": "READ",
+        "principalType": "ROLE",
+        "principalId": "$authenticated",
+        "permission": "ALLOW",
+        "property": "fetchClubInfo"
+    }, {
+        "accessType": "*",
+        "principalType": "ROLE",
+        "principalId": "admin",
+        "permission": "ALLOW"
+    }, {
+        "accessType": "READ",
+        "principalType": "ROLE",
+        "principalId": "clubOwner",
+        "permission": "ALLOW",
+        "property": "findById"
+    }],
+    "methods": {}
+}
